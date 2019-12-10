@@ -3,6 +3,13 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class CardBackView extends StatelessWidget {
+  final String cvvNumber;
+  String _formattedCVVNumber;
+
+  CardBackView({Key key, this.cvvNumber}) : super(key: key) {
+    _formattedCVVNumber = this.cvvNumber.padRight(3, '*');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Transform(
@@ -44,8 +51,18 @@ class CardBackView extends StatelessWidget {
                           width: 200,
                           color: Colors.grey,
                         ),
-                        SizedBox(width: 32,),
-                        Text('339', style: TextStyle(fontStyle: FontStyle.italic, fontWeight: FontWeight.bold, fontSize: 18),),
+                        SizedBox(
+                          width: 32,
+                        ),
+                        Text(
+                          _formattedCVVNumber,
+                          style: TextStyle(
+                              fontStyle: FontStyle.italic,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Roboto',
+                              letterSpacing: 1,
+                              fontSize: 18),
+                        ),
                       ],
                     ),
                     SizedBox(height: 8),

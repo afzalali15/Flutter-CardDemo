@@ -65,6 +65,9 @@ flutter:
           weight: 300
         - asset: assets/fonts/Avenir-Medium.ttf
           weight: 500
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/RobotoMono-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
